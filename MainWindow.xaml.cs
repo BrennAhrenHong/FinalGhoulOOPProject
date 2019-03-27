@@ -92,11 +92,6 @@ namespace FinalGhoulOOPProject
         //Exit Button
         private void btnExitProgram(object sender, RoutedEventArgs e)
         {
-            var items = listViewMasterList.SelectedItems;
-            foreach (ListViewItem item in items)
-            {
-                MessageBox.Show(item.ToString());
-            }
             Application.Current.Shutdown();
         }
 

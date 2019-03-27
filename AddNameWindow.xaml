@@ -22,7 +22,7 @@
         <Label Content="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,89,0,0" Width="85"/>
         <TextBox Name="txtAddress"  HorizontalAlignment="Left" Height="32" Margin="112,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtContactNumber" HorizontalAlignment="Left" Height="32" Margin="112,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txtContactNumber_PreviewTextInput"/>
-        <Button Content="Cancel" Background="#5343D2" HorizontalAlignment="Center" Margin="168,0,10,35" VerticalAlignment="Bottom" Width="87" Click="CancelButton" Height="37" IsCancel="True"/>
+        <Button Content="Cancel" Background="IndianRed" HorizontalAlignment="Center" Margin="168,0,10,35" VerticalAlignment="Bottom" Width="87" Click="CancelButton" Height="37" IsCancel="True"/>
 
     </Grid>
 </Window>

@@ -24,10 +24,10 @@
                     </Button>
                     <TextBlock FontWeight="SemiBold" FontSize="11" FontFamily="Verdana" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="15" Text="Add Transaction" Margin="20,-2.5" Foreground="White"/>
 
-                    <Button Name="btnExitApp" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Center" Margin="20,60" VerticalAlignment="Top" Width="110" Height="65" Click="btnExitProgram">
+                    <Button Name="btnExitApp" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Center" Margin="20,35" VerticalAlignment="Top" Width="110" Height="65" Click="btnExitProgram">
                         <materialDesign:PackIcon HorizontalAlignment="Center" Kind="Logout" Height="50" Width="30" />
                     </Button>
-                    <TextBlock FontWeight="SemiBold" FontSize="11" FontFamily="Verdana" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="15" Text="Logout" Margin="20,-78" Foreground="White"/>
+                    <TextBlock FontWeight="SemiBold" FontSize="11" FontFamily="Verdana" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="15" Text="Logout" Margin="20,-53" Foreground="White"/>
                 </StackPanel>
 
                 <TextBox Name="txtbSearchBar" Background="GhostWhite" HorizontalAlignment="Left" Height="30" Margin="34,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101" TextChanged="txtbSearchBar_TextChanged"/>
@@ -65,7 +65,7 @@
             </Grid>
 
             <Grid Height="60" VerticalAlignment="Top" Background="#5F31F3">
-                <TextBlock FontFamily="Harlow Solid Italic" Text="Majesty Banking Inc." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Foreground="White" ></TextBlock>
+                <TextBlock FontFamily="VERDANA" Text="Majesty Banking Inc." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Foreground="White" ></TextBlock>
             </Grid>
 
             <materialDesign:PackIcon Kind="Search" Height="25" Width="25" Margin="8,76,0,0"/>

@@ -125,5 +125,8 @@
   <ItemGroup>
     <Resource Include="default-profile.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="c90c8a02-ad03-404a-a7e8-6345017e84f1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

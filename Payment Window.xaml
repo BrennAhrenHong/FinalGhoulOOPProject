@@ -16,7 +16,7 @@
         <Label Content="Balance:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
         <TextBlock Name="txtremainingBalance" HorizontalAlignment="Left" Margin="74,11,0,0" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top"/>
         <Button Content="Enter" HorizontalAlignment="Left" Margin="30,78,0,0" VerticalAlignment="Top" Width="75" Click="Enter" IsDefault="True"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="140,78,0,0" VerticalAlignment="Top" Width="75" Click="Cancel" IsCancel="True" Grid.ColumnSpan="2"/>
+        <Button Content="Cancel" Background="IndianRed" HorizontalAlignment="Left" Margin="140,78,0,0" VerticalAlignment="Top" Width="75" Click="Cancel" IsCancel="True" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

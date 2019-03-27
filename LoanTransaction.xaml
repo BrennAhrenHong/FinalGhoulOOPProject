@@ -10,34 +10,34 @@
 
     <Grid Background="NavajoWhite" Width="450" Margin="0,0,-8,-4">
         <Button Background="#5343D2" Content="      Add Transaction" HorizontalAlignment="Center" Margin="62,378,223,0" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.732,1.418" Click="btnAddTransaction_Click" IsDefault="True"></Button>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
-        <Label Content="Type of Jewelry:" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top"/>
-        <Label Content="Quality of Jewelry:" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="cmbNameList" HorizontalAlignment="Left" Margin="79,16,0,0" VerticalAlignment="Top" Width="163"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" FontFamily="Georgia"/>
+        <Label Content="Type of Jewelry:" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" FontFamily="Georgia"/>
+        <Label Content="Quality of Jewelry:" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" FontFamily="Georgia"/>
+        <ComboBox Name="cmbNameList" HorizontalAlignment="Left" Margin="79,16,0,0" VerticalAlignment="Top" Width="163" FontFamily="Georgia"/>
         <Button Background="#5343D2" Name="btnAddName" Content="     Add Name" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.732,1.418" Click="btnAddName_Click"/>
-        <ComboBox Name="cmbTypeOfJewelry" HorizontalAlignment="Left" Margin="108,53,0,0" VerticalAlignment="Top" Width="134">
-            <ComboBoxItem Content="Rings" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="Necklaces" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="Bracelets" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="Earrings" HorizontalAlignment="Left" Width="118"/>
+        <ComboBox Name="cmbTypeOfJewelry" HorizontalAlignment="Left" Margin="108,53,0,0" VerticalAlignment="Top" Width="134" FontFamily="Georgia">
+            <ComboBoxItem Content="Rings" HorizontalAlignment="Left" Width="118" FontFamily="Georgia"/>
+            <ComboBoxItem Content="Necklaces" HorizontalAlignment="Left" Width="118" FontFamily="Georgia"/>
+            <ComboBoxItem Content="Bracelets" HorizontalAlignment="Left" Width="118" FontFamily="Georgia"/>
+            <ComboBoxItem Content="Earrings" HorizontalAlignment="Left" Width="118" FontFamily="Georgia"/>
         </ComboBox>
-        <ComboBox Name="cmbJewelryQuality" HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="cmbJewelryQuality_DropDownClosed">
-            <ComboBoxItem Content="10k" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="18k" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="21k" HorizontalAlignment="Left" Width="118"/>
+        <ComboBox Name="cmbJewelryQuality" HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="cmbJewelryQuality_DropDownClosed" FontFamily="Georgia">
+            <ComboBoxItem Content="10k" HorizontalAlignment="Left" Width="118" FontFamily="Georgia"/>
+            <ComboBoxItem Content="18k" HorizontalAlignment="Left" Width="118" FontFamily="Georgia"/>
+            <ComboBoxItem Content="21k" HorizontalAlignment="Left" Width="118" FontFamily="Georgia"/>
         </ComboBox>
-        <Label Content="Weight of Jewelry:" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtbWeight" HorizontalAlignment="Left" Height="28" Margin="122,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextChanged="WeightTextBox_TextChanged" PreviewTextInput="txtbWeight_TextInputDisabler"/>
-        <Label Content="grams" HorizontalAlignment="Left" Margin="177,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.628,1.077"/>
-        <Label Content="Discount:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtbDiscount" HorizontalAlignment="Left" Height="31" Margin="122,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextChanged="txtDiscount_TextChanged" PreviewTextInput="txtbDiscount_TextInputDisabler"/>
-        <Label Content="Details:" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top"/>
-        <Label Content="Actual Value:" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top"/>
-        <TextBlock Name="txtblockActualValue" HorizontalAlignment="Left" Margin="122,184,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <Label Content="Amount Loaned:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+        <Label Content="Weight of Jewelry:" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" FontFamily="Georgia"/>
+        <TextBox Name="txtbWeight" HorizontalAlignment="Left" Height="28" Margin="122,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextChanged="WeightTextBox_TextChanged" PreviewTextInput="txtbWeight_TextInputDisabler" FontFamily="Georgia"/>
+        <Label Content="grams" HorizontalAlignment="Left" Margin="177,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.628,1.077" FontFamily="Georgia"/>
+        <Label Content="Discount:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" FontFamily="Georgia"/>
+        <TextBox Name="txtbDiscount" HorizontalAlignment="Left" Height="31" Margin="122,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextChanged="txtDiscount_TextChanged" PreviewTextInput="txtbDiscount_TextInputDisabler" FontFamily="Georgia"/>
+        <Label Content="Details:" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" FontFamily="Georgia"/>
+        <Label Content="Actual Value:" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" FontFamily="Georgia"/>
+        <TextBlock Name="txtblockActualValue" HorizontalAlignment="Left" Margin="122,184,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontFamily="Georgia"/>
+        <Label Content="Amount Loaned:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" FontFamily="Georgia"/>
 
-        <TextBox Name="txtbAmountLoaned" HorizontalAlignment="Left" Height="31" Margin="122,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtDiscount_TextChanged" PreviewTextInput="txtbAmountLoaned_TextInputDisabler"/>
-        <RichTextBox HorizontalAlignment="Left" Height="98" Margin="63,272,0,0" VerticalAlignment="Top" Width="340">
+        <TextBox Name="txtbAmountLoaned" HorizontalAlignment="Left" Height="31" Margin="122,201,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtDiscount_TextChanged" PreviewTextInput="txtbAmountLoaned_TextInputDisabler" FontFamily="Georgia"/>
+        <RichTextBox HorizontalAlignment="Left" Height="98" Margin="63,272,0,0" VerticalAlignment="Top" Width="340" FontFamily="Georgia">
             <FlowDocument>
                 <Paragraph>
                     <Run Name="rtbDetails" Text=""/>
@@ -52,6 +52,6 @@
         <TextBlock x:Name="txtbKaratPrice" HorizontalAlignment="Left" Margin="337,95,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <materialDesign:PackIcon Foreground="White" HorizontalAlignment="Center" Kind="UsersPlus" Height="50" Width="30" Margin="268,0,144,0" />
         <materialDesign:PackIcon Foreground="White" HorizontalAlignment="Center" Kind="AddBox" Height="50" Width="30" Margin="62,370,350,0" />
-        <Button Name="closeButton" Background="#5343D2" Content="Cancel" HorizontalAlignment="Center" Margin="268,378,64,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.732,1.418" Click="cancelButton" IsCancel="True"/>
+        <Button Name="closeButton" Background="IndianRed" Content="Cancel" HorizontalAlignment="Center" Margin="268,378,64,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.732,1.418" Click="cancelButton" IsCancel="True"/>
     </Grid>
 </Window>
