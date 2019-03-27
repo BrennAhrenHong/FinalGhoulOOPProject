@@ -3,10 +3,128 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:FinalGhoulOOPProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        ResizeMode="NoResize"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+
+    <Viewbox MinHeight="600" MinWidth="1200" Stretch="Uniform">
+        <Grid Background="NavajoWhite" Width="1235" Height="620">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Height="620" Width="164" Background="#4529A0">
+                <StackPanel Height="540" Width="150">
+                    <Button Name="btnPriceSettings" Background="#5343D2" FontWeight="Bold" Width="110" Height="65" Margin="20,80" HorizontalContentAlignment="Center" VerticalAlignment="Top" Click="btnOpenPriceSettings">
+                        <materialDesign:PackIcon HorizontalAlignment="Center" Kind="Tag" Height="50" Width="30" />
+                    </Button>
+                    <TextBlock FontWeight="SemiBold" FontFamily="Verdana" Height="15" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Price Settings" Margin="20,-100" Foreground="White"/>
+
+                    <Button Name="btnaddTransaction" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,-50"  Width="110" Height="65" Click="btnOpenLoanTransaction">
+                        <materialDesign:PackIcon HorizontalAlignment="Center" Kind="BooksPlus" Height="50" Width="30" />
+                    </Button>
+                    <TextBlock FontWeight="SemiBold" FontSize="11" FontFamily="Verdana" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="15" Text="Add Transaction" Margin="20,-2.5" Foreground="White"/>
+
+                    <Button Name="btnExitApp" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Center" Margin="20,60" VerticalAlignment="Top" Width="110" Height="65" Click="btnExitProgram">
+                        <materialDesign:PackIcon HorizontalAlignment="Center" Kind="Logout" Height="50" Width="30" />
+                    </Button>
+                    <TextBlock FontWeight="SemiBold" FontSize="11" FontFamily="Verdana" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="15" Text="Logout" Margin="20,-78" Foreground="White"/>
+                </StackPanel>
+
+                <TextBox Name="txtbSearchBar" Background="GhostWhite" HorizontalAlignment="Left" Height="30" Margin="34,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101" TextChanged="txtbSearchBar_TextChanged"/>
+            </Grid>
+
+            <Grid Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Center" Height="640" Width="1000">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ListView Name="listViewMasterList" FontSize="12" HorizontalAlignment="Right" Height="557" Margin="-70,73,344,0" VerticalAlignment="Top"
+                          Width="726" AutomationProperties.Name="listViewMasterList" SelectionChanged="listViewMasterList_SelectionChanged" Grid.Row="1"
+                          RenderTransformOrigin="0.752,0.416">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="No #" Width="105" DisplayMemberBinding="{Binding ID}" />
+                            <GridViewColumn Header="Name:" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="Transaction Date" Width="125" DisplayMemberBinding="{Binding TransactionDate}"/>
+                            <GridViewColumn Header="Amount Loaned" Width="125" DisplayMemberBinding="{Binding AmountLoaned}"/>
+                            <GridViewColumn Header="Rate" Width="75" DisplayMemberBinding="{Binding InterestRate}"/>
+                            <GridViewColumn Header="Remaining Balance" Width="150" DisplayMemberBinding="{Binding Balance}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid Width="1" Margin="891,60,343,0" RenderTransformOrigin="0.5,0.5" Background="Black">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+            </Grid>
+
+            <Grid Height="60" VerticalAlignment="Top" Background="#5F31F3">
+                <TextBlock FontFamily="Harlow Solid Italic" Text="Majesty Banking Inc." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Foreground="White" ></TextBlock>
+            </Grid>
+
+            <materialDesign:PackIcon Kind="Search" Height="25" Width="25" Margin="8,76,0,0"/>
+            <Grid Visibility="Hidden" Name="gridCustomerDetails" Margin="898,76,10,10">
+                <Image Margin="1,6,226,428" Source="default-profile.gif" Stretch="Uniform" Height="100" Width="100"/>
+                <Label Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,26,0,0"/>
+
+                <TextBox Name="txtbName" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,23,0,0"/>
+                <Label Content="Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,57,0,0"/>
+
+                <TextBox Name="txtbAddress" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,54,0,0"/>
+                <Label Content="Contact Number:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,93,0,0"/>
+
+                <TextBox Name="txtbContactNumber" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Margin="0,86,0,0" RenderTransformOrigin="-0.182,0.167"/>
+                <Label Content="Type of Jewelry:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,345,0,0"/>
+
+                <TextBox Name="txtbLastTransactionDate" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Margin="0,161,48,0" RenderTransformOrigin="0.509,0.5"/>
+                <Label Content="Quality of Jewelry:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="168,345,0,0"/>
+
+                <TextBox Name="txtbInterestRate" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Margin="0,213,152,0"/>
+                <Label Content="Weight (g):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,371,0,0"/>
+
+                <TextBox Name="txtbAccumulatedAmount" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="0,239,48,0"/>
+                <Label Content="Discount (g):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,397,0,0"/>
+
+                <TextBox Name="txtbTypeOfJewelry" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" Margin="0,343,163,0"/>
+                <Label Content="Other Details:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,433,0,0"/>
+
+                <RichTextBox VerticalScrollBarVisibility="Auto" IsReadOnly="True" HorizontalAlignment="Left" Height="81" Margin="83,443,0,0" VerticalAlignment="Top" Width="234">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Name="rtxtbDetails" Text=""/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <Label Content="Actual Value:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169,373,0,0" RenderTransformOrigin="0.544,0.577"/>
+                <Label Content="Amount Loaned:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,189,0,0"/>
+                <Label Content="Accumulated Amount:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="0,241,0,0"/>
+                <Label Content="Personal Details:" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,0,0,0"/>
+                <Label Content="Account Details:" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,114,0,0"/>
+                <Label Content="Interest Rate:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,215,0,0"/>
+
+                <TextBox Name="txtbAmountLoaned" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="0,187,48,0" RenderTransformOrigin="0.509,0.5"/>
+                <Label Content="Date of Last Payment:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,163,0,0"/>
+                <Label Content="Date of First Transaction:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,137,0,0"/>
+                <TextBox Name="txtbFirstTransactionDate" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Margin="0,135,48,0" RenderTransformOrigin="0.509,0.5"/>
+                <Label Content="Remaining Balance:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,267,0,0" RenderTransformOrigin="0.544,0.577"/>
+                <TextBox Name="txtbRemainingBalance" IsReadOnly="True" Foreground="Red" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="0,265,48,0"/>
+                <Label FontWeight="Bold" Content="Transaction Details:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,324,0,0"/>
+                <Button Name="btnPay" Content="Pay" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Left" Margin="146,300,0,0" VerticalAlignment="Top" Width="93" Height="28" Click="btnOpenPayWindow"/>
+                <materialDesign:PackIcon Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Kind="Payment" Height="21" Width="25" Margin="151,304,0,209" />
+                <TextBox Name="txtbWeight" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="0,369,174,0"/>
+                <TextBox Name="txtbDiscount" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="0,397,174,0"/>
+                <TextBox Name="txtbQualityOfJewelry" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" Margin="0,343,20,0"/>
+                <TextBox Name="txtbActualValue" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="0,367,0,0"/>
+                <Label Content="Price:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="168,397,0,0" RenderTransformOrigin="0.544,0.577"/>
+                <TextBox Name="txtbKaratPrice" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="0,393,0,0"/>
+            </Grid>
+        </Grid>
+    </Viewbox>
 </Window>
