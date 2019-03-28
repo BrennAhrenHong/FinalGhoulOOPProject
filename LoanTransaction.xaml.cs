@@ -54,6 +54,8 @@ namespace FinalGhoulOOPProject
                         discount = Convert.ToDecimal(txtbDiscount.Text);
                     initialValue = DataStorage.priceArray[0] * (weight - discount);
                     txtblockActualValue.Text = "Php " + initialValue.ToString("#,##0.00");
+                    if (discount > weight)
+                        txtblockActualValue.Text = "Php 0.00";
                     break;
 
                 case "18k":
@@ -70,7 +72,8 @@ namespace FinalGhoulOOPProject
                         discount = Convert.ToDecimal(txtbDiscount.Text);
 
                     initialValue = DataStorage.priceArray[1] * (weight - discount);
-                    txtblockActualValue.Text = "Php " + initialValue.ToString("#,##0.00");
+                    if (discount > weight)
+                        txtblockActualValue.Text = "Php 0.00";
                     break;
 
                 case "21k":
@@ -87,9 +90,12 @@ namespace FinalGhoulOOPProject
 
                     initialValue = DataStorage.priceArray[2] * (weight - discount);
                     txtblockActualValue.Text = "Php " + initialValue.ToString("#,##0.00");
+                    if (discount > weight)
+                        txtblockActualValue.Text = "Php 0.00";
                     break;
 
                 default:
+                        txtblockActualValue.Text = "Php 0.00";
                     break;
             }
         }

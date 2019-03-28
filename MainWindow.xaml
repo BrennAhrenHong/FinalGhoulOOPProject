@@ -116,7 +116,7 @@
                 <Label Content="Remaining Balance:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,267,0,0" RenderTransformOrigin="0.544,0.577"/>
                 <TextBox Name="txtbRemainingBalance" IsReadOnly="True" Foreground="Red" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="0,265,48,0"/>
                 <Label FontWeight="Bold" Content="Transaction Details:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,324,0,0"/>
-                <Button Name="btnPay" Content="Pay" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Left" Margin="146,300,0,0" VerticalAlignment="Top" Width="93" Height="28" Click="btnOpenPayWindow"/>
+                <Button Name="btnPay" IsEnabled="False" Content="Pay" Background="#5343D2" FontWeight="Bold" IsDefault="True"  HorizontalAlignment="Left" Margin="146,300,0,0" VerticalAlignment="Top" Width="93" Height="28" Click="btnOpenPayWindow"/>
                 <materialDesign:PackIcon Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Kind="Payment" Height="21" Width="25" Margin="151,304,0,209" />
                 <TextBox Name="txtbWeight" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="0,369,174,0"/>
                 <TextBox Name="txtbDiscount" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="0,397,174,0"/>

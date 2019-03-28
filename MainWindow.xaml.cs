@@ -28,13 +28,14 @@ namespace FinalGhoulOOPProject
 
         bool listIndexChecker;
         bool hasSomething;
+        bool searchBarState;
 
         public MainWindow()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             this.WindowState = WindowState.Maximized;
-            DebugList();
+            //DebugList();
         }
 
         //Opens Settings Window
@@ -63,6 +64,8 @@ namespace FinalGhoulOOPProject
                 addLoanTransaction.main = this;
                 listIndexChecker = false;
                 listViewMasterList.SelectedIndex = -1;
+                searchBarState = false;
+                txtbSearchBar.Text = "";
                 addLoanTransaction.ShowDialog();
                 listViewMasterList.ItemsSource = null;
                 listIndexChecker = true;
@@ -87,22 +90,30 @@ namespace FinalGhoulOOPProject
             listViewMasterList.ItemsSource = itemList;
             TransactionDetailsVisibility(-1);
             listIndexChecker = true;
+            searchBarState = false;
+            txtbSearchBar.Clear();
         }
 
         //Exit Button
         private void btnExitProgram(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            //Application.Current.Shutdown();
         }
 
         //Reveals customer details when clicked from the listview
         private void listViewMasterList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (listIndexChecker && listViewMasterList.SelectedIndex >= 0)
+            if (listIndexChecker && listViewMasterList.SelectedIndex >= 0 && searchBarState != true)
             {
                 //listViewMasterList.SelectedItem
                 TransactionDetailsVisibility(listItemIndex[listViewMasterList.SelectedIndex]);
                 DataStorage.selectedListViewIndex = listItemIndex[listViewMasterList.SelectedIndex];
+            }
+            else if(searchBarState && listViewMasterList.SelectedIndex >= 0)
+            {
+                var selectedIndexWithSearchBar = listViewMasterList.SelectedItems[listViewMasterList.SelectedIndex] as CustomerDetails;
+                TransactionDetailsVisibility(listItemIndex[DataStorage.DataIndex(selectedIndexWithSearchBar.Name)]);
+                DataStorage.selectedListViewIndex = listItemIndex[DataStorage.DataIndex(selectedIndexWithSearchBar.Name)];
             }
         }
 
@@ -129,10 +140,12 @@ namespace FinalGhoulOOPProject
                 txtbKaratPrice.Text = DataStorage.karatPrice[index].ToString("#,##0.00");
                 txtbDiscount.Text = Convert.ToString(DataStorage.discount[index]);
                 rtxtbDetails.Text = Convert.ToString(DataStorage.details[index]);
+                btnPay.IsEnabled = true;
             }
             else
             {
                 gridCustomerDetails.Visibility = Visibility.Hidden;
+                btnPay.IsEnabled = false;
             }
         }
 
@@ -187,9 +200,14 @@ namespace FinalGhoulOOPProject
             }
         }
 
-        //Logic for Search Bar
+        //Logic for Search Bar //HASSOMETHING = TRUE MUST HAVE SEPARATE LOGIC FOR CHECKING INDEX
         private void txtbSearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
+            searchBarState = false;
+            if (txtbSearchBar.Text != "")
+            {
+                searchBarState = true;
+            }
             if (DataStorage.accountBalance != null)
             {
                 foreach (decimal account in DataStorage.accountBalance)
@@ -224,66 +242,79 @@ namespace FinalGhoulOOPProject
                 return true;
             else
             {
-                return ((name as CustomerDetails).Name.IndexOf(txtbSearchBar.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+               return ((name as CustomerDetails).Name.IndexOf(txtbSearchBar.Text, StringComparison.OrdinalIgnoreCase) >= 0);     
             }
         }
 
         //Adding Sample Items to the List
         public void DebugList()
         {
-            DataStorage.customerList.Add("Brenn");
+            DataStorage.customerList.Add("Arisa");
             DataStorage.address.Add("Home");
             DataStorage.contactNumber.Add("09329580029");
             DataStorage.dateOfTransaction.Add("3/17/2019");
             DataStorage.typeOfJewelry.Add("Rings");
             DataStorage.qualityOfJewelry.Add("10k");
-            DataStorage.dateOfTransaction.Add("2/12/19");
-            DataStorage.dateOfLastPayment.Add("4/03/19");
+            DataStorage.dateOfTransaction.Add("2/12/2019");
+            DataStorage.dateOfLastPayment.Add("3/12/2019");
             DataStorage.dateUpdated.Add("5/13/19");
             DataStorage.details.Add("qwerty");
             DataStorage.discount.Add(2);
             DataStorage.weightOfJewelry.Add(5000);
             DataStorage.actualValue.Add(25000);
-            DataStorage.accumulatedAmount.Add(30000);
+            DataStorage.accumulatedAmount.Add(3000);
             DataStorage.karatPrice.Add(2500);
-            DataStorage.amountLoaned.Add(10000);
+            DataStorage.amountLoaned.Add(1000);
             DataStorage.interestRate.Add(5);
-            DataStorage.accountBalance.Add(10000);
+            DataStorage.accountBalance.Add(500);
             DataStorage.dateUpdated.Add("3/18/2019");
-            DataStorage.eightDigitPin.Add(12345678);
+            DataStorage.eightDigitPin.Add(000000001);
 
-            DataStorage.customerList.Add("AhBrenn");
-            DataStorage.dateOfTransaction.Add("3/13/2019");
-            DataStorage.amountLoaned.Add(102000);
-            DataStorage.interestRate.Add(52);
-            DataStorage.accountBalance.Add(100200);
+            DataStorage.customerList.Add("Ben");
+            DataStorage.dateOfTransaction.Add("2/13/2015");
+            DataStorage.amountLoaned.Add(1000);
+            DataStorage.interestRate.Add(10);
+            DataStorage.accountBalance.Add(500);
             DataStorage.dateUpdated.Add("3/23/2019");
             DataStorage.address.Add("Home");
-
             DataStorage.contactNumber.Add("09329580029");
             DataStorage.typeOfJewelry.Add("Rings");
             DataStorage.qualityOfJewelry.Add("10k");
-            DataStorage.dateOfTransaction.Add("2/12/19");
-            DataStorage.dateOfLastPayment.Add("4/03/19");
+            DataStorage.dateOfTransaction.Add("2/12/2019");
+            DataStorage.dateOfLastPayment.Add("4/03/2019");
             DataStorage.dateUpdated.Add("5/13/19");
             DataStorage.details.Add("qwerty");
-
             DataStorage.discount.Add(2);
             DataStorage.weightOfJewelry.Add(5000);
             DataStorage.actualValue.Add(25000);
-            DataStorage.accumulatedAmount.Add(30000);
+            DataStorage.accumulatedAmount.Add(1500);
             DataStorage.karatPrice.Add(2500);
-            DataStorage.amountLoaned.Add(10000);
-            DataStorage.eightDigitPin.Add(12345678);
+            DataStorage.eightDigitPin.Add(000000002);
+
+            DataStorage.customerList.Add("AhBrenn");
+            DataStorage.dateOfTransaction.Add("3/13/2017");
+            DataStorage.amountLoaned.Add(3000);
+            DataStorage.interestRate.Add(20);
+            DataStorage.accountBalance.Add(2000);
+            DataStorage.dateUpdated.Add("3/28/2019");
+            DataStorage.address.Add("Home");
+            DataStorage.contactNumber.Add("09329580029");
+            DataStorage.typeOfJewelry.Add("Rings");
+            DataStorage.qualityOfJewelry.Add("10k");
+            DataStorage.dateOfTransaction.Add("2/12/2019");
+            DataStorage.dateOfLastPayment.Add("4/03/2019");
+            DataStorage.dateUpdated.Add("5/13/19");
+            DataStorage.details.Add("qwerty");
+            DataStorage.discount.Add(2);
+            DataStorage.weightOfJewelry.Add(5000);
+            DataStorage.actualValue.Add(25000);
+            DataStorage.accumulatedAmount.Add(3500);
+            DataStorage.karatPrice.Add(2500);
+            DataStorage.eightDigitPin.Add(000000002);
 
             List<CustomerDetails> itemList = new List<CustomerDetails>();
             ListDetails();
             //listViewMasterList.ItemsSource = itemList;
-        }
-
-        private void btnPriceSettings_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 
